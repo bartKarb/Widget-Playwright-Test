@@ -34,6 +34,10 @@ const config: PlaywrightTestConfig = {
       name: "chromium",
       use: {
         ...devices["Desktop Chrome"],
+        userAgent:
+          "recruitment-task-" +
+          process.env.UA +
+          " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.7204.23 Safari/537.36",
       },
     },
   ],
