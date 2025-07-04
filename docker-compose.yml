@@ -1,0 +1,12 @@
+services:
+  playwright-tests:
+    build: .
+    environment:
+      - PROJECT_PUBLIC_KEY=${PROJECT_PUBLIC_KEY}
+      - API_TOKEN=${API_TOKEN}
+    volumes:
+      # Map directories for test results and reports
+      - ./test-results:/app/test-results
+      - ./playwright-report:/app/playwright-report
+    # Optionally, you can add network_mode for better isolation
+    network_mode: bridge
